@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEL Interactive Questionnaire</title>
+    <!-- Tailwind CSS (CDN for simplicity in this format) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              pastel: {
+                pink: '#FFD1DC',
+                blue: '#BAE1FF',
+                green: '#C1E1C1',
+                yellow: '#FDFD96',
+              }
+            },
+            fontFamily: {
+              sans: ['"Microsoft JhengHei"', '"Heiti TC"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Microsoft JhengHei', 'Heiti TC', sans-serif;
+        background-color: #fdf2f8; /* pink-50 */
+      }
+      /* Custom scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #fbcfe8; 
+        border-radius: 6px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #f472b6; 
+      }
+      
+      /* STRICT RUBY ALIGNMENT CSS */
+      ruby {
+        display: inline-flex;
+        flex-direction: column-reverse; /* Puts RT on top of Base */
+        align-items: center; /* Centers horizontally */
+        vertical-align: bottom;
+        margin: 0 0.1em; /* Small spacing between ruby blocks */
+        line-height: 1; /* Reset line height inside block */
+      }
+      
+      rt {
+        display: block;
+        font-size: 0.5em; /* Readable size */
+        line-height: 1;
+        text-align: center;
+        font-weight: normal;
+        margin-bottom: 0.2em; /* Spacing between Zhuyin and Char */
+        color: #666; /* Slightly softer color for reading */
+        font-family: system-ui, -apple-system, sans-serif; /* Clean font for bopomofo */
+      }
+      
+      /* Ensure the base character is distinct */
+      ruby > *:not(rt) {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.574.0",
+    "path": "https://esm.sh/path@^0.12.7",
+    "express": "https://esm.sh/express@^5.2.1",
+    "sqlite3": "https://esm.sh/sqlite3@^5.1.7",
+    "body-parser": "https://esm.sh/body-parser@^2.2.2",
+    "cors": "https://esm.sh/cors@^2.8.6",
+    "url": "https://esm.sh/url@^0.11.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
